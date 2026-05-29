@@ -41,7 +41,7 @@ const render = ({ ...args }: SiteFooterArgs) => (
 						<a>Twitter</a>
 					</Stack>
 				</Cluster>
-				<div>&copy; 2023 Korazza</div>
+				<div>&copy; 2024 Roberto Coratti</div>
 			</Stack>
 		</SiteFooter>
 	</Stack>
