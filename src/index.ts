@@ -8,6 +8,7 @@ export * from "./components/spinner"
 
 export * from "./layouts/box"
 export * from "./layouts/center"
+export * from "./layouts/container"
 export * from "./layouts/cluster"
 export * from "./layouts/cover"
 export * from "./layouts/frame"

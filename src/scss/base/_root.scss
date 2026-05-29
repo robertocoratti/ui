@@ -88,6 +88,16 @@
 			--aspect-ratio-#{$key}: #{$value};
 		}
 
+		// container widths
+		@each $key, $value in variables.$container-widths {
+			--container-width-#{$key}: #{$value};
+		}
+
+		// container gutters
+		@each $key, $value in variables.$container-gutters {
+			--container-gutter-#{$key}: #{$value};
+		}
+
 		// light theme (default)
 		@include _theme-vars("light");
 	}

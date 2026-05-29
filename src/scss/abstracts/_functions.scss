@@ -130,6 +130,15 @@
 	@return var(--aspect-ratio-#{$key});
 }
 
+// container-width
+@function container-width($key) {
+	@if not map.has-key(variables.$container-widths, $key) {
+		@error '"#{$key}" is not a valid container width';
+	}
+
+	@return var(--container-width-#{$key});
+}
+
 // fluid
 @function fluid($min, $max, $min-vw: variables.$fluid-min-vw, $max-vw: variables.$fluid-max-vw) {
 	$min-vw-rem: math.div($min-vw, 16px) * 1rem;

@@ -1,0 +1,25 @@
+@use "sass:map";
+
+@use "../abstracts/variables";
+@use "../abstracts/functions" as *;
+
+@layer layouts {
+	.container {
+		margin-inline: auto;
+		inline-size: 100%;
+		max-inline-size: var(--container-width-normal);
+		padding-inline: var(--container-gutter-md);
+
+		@each $key in map.keys(variables.$container-widths) {
+			&[data-width="#{$key}"] {
+				max-inline-size: container-width($key);
+			}
+		}
+
+		@each $key in map.keys(variables.$container-gutters) {
+			&[data-gutter="#{$key}"] {
+				padding-inline: var(--container-gutter-#{$key});
+			}
+		}
+	}
+}

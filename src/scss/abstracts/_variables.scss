@@ -20,6 +20,20 @@ $fluid-spaces: (
 	"xl": (4rem, 6rem),
 ) !default;
 
+// container
+$container-widths: (
+	"narrow": 40rem,
+	"normal": 64rem,
+	"wide": 80rem,
+	"full": 100%,
+) !default;
+$container-gutters: (
+	"none": 0,
+	"sm": 1rem,
+	"md": 1.5rem,
+	"lg": 2.5rem,
+) !default;
+
 // breakpoints
 $breakpoints: (
 	"sm": 640px,
