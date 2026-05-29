@@ -1,3 +1,5 @@
+$font-path: "/fonts" !default;
+
 $weights: (
 	"100": "Thin",
 	"200": "ExtraLight",
@@ -16,7 +18,7 @@ $weights: (
 		font-family: "DM Sans";
 		font-weight: #{$key};
 		font-display: swap;
-		src: url("/fonts/DMSans/static/DMSans-#{$value}.ttf") format("truetype");
+		src: url("#{$font-path}/DMSans/static/DMSans-#{$value}.ttf") format("truetype");
 	}
 
 	// serif
@@ -24,7 +26,7 @@ $weights: (
 		font-family: "Poppins";
 		font-weight: #{$key};
 		font-display: swap;
-		src: url("/fonts/Poppins/Poppins-#{$value}.ttf") format("truetype");
+		src: url("#{$font-path}/Poppins/Poppins-#{$value}.ttf") format("truetype");
 	}
 
 	// mono
@@ -32,6 +34,6 @@ $weights: (
 		font-family: "IBM Plex Mono";
 		font-weight: #{$key};
 		font-display: swap;
-		src: url("/fonts/IBMPlexMono/IBMPlexMono-#{$value}.ttf") format("truetype");
+		src: url("#{$font-path}/IBMPlexMono/IBMPlexMono-#{$value}.ttf") format("truetype");
 	}
 }
