@@ -1,0 +1,12 @@
+@layer layouts {
+	.switcher {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--switcher-gap, var(--space-md));
+
+		& > * {
+			flex-grow: 1;
+			flex-basis: calc((var(--switcher-threshold, 40rem) - 100%) * 999);
+		}
+	}
+}

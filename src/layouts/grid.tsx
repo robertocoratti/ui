@@ -5,7 +5,7 @@ export interface GridProps<T extends React.ElementType = "div"> {
 	as?: T
 	/** Space size */
 	space?: (typeof spaces)[number]
-	/** Min size before wrap */
+	/** Min column width before wrap */
 	min?: string
 }
 
@@ -14,7 +14,7 @@ export function Grid<T extends React.ElementType = "div">({
 	children,
 	as,
 	space,
-	min = "250px",
+	min,
 	...props
 }: GridProps<T> & Omit<React.ComponentPropsWithoutRef<T>, keyof GridProps<T>>) {
 	const Component = as || "div"
@@ -23,9 +23,7 @@ export function Grid<T extends React.ElementType = "div">({
 		<Component
 			className={["grid", className].join(className ? " | " : "").trim()}
 			data-space={space}
-			style={{
-				gridTemplateColumns: `repeat(auto-fill, minmax(min(${min}, 100%), 1fr))`,
-			}}
+			style={min ? ({ "--grid-min": min } as React.CSSProperties) : undefined}
 			{...props}
 		>
 			{children}

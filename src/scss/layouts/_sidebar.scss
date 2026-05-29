@@ -1,0 +1,29 @@
+@layer layouts {
+	.sidebar {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--sidebar-gap, var(--space-md));
+
+		& > :first-child {
+			flex-basis: var(--sidebar-width, 20rem);
+			flex-grow: 1;
+		}
+
+		& > :last-child {
+			flex-basis: 0;
+			flex-grow: 999;
+			min-inline-size: var(--sidebar-content-min, 50%);
+		}
+
+		&[data-side="end"] > :first-child {
+			flex-basis: 0;
+			flex-grow: 999;
+			min-inline-size: var(--sidebar-content-min, 50%);
+		}
+
+		&[data-side="end"] > :last-child {
+			flex-basis: var(--sidebar-width, 20rem);
+			flex-grow: 1;
+		}
+	}
+}

@@ -1,0 +1,7 @@
+@layer layouts {
+	.icon {
+		width: var(--icon-size, 0.75em);
+		height: var(--icon-size, 0.75em);
+		vertical-align: middle;
+	}
+}

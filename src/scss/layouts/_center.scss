@@ -1,0 +1,21 @@
+@layer layouts {
+	.center {
+		box-sizing: content-box;
+		margin-inline: auto;
+		max-inline-size: var(--center-max, 60ch);
+
+		&[data-gutters="true"] {
+			padding-inline: var(--center-gutters, var(--space-md));
+		}
+
+		&[data-intrinsic="true"] {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&[data-text="true"] {
+			text-align: center;
+		}
+	}
+}

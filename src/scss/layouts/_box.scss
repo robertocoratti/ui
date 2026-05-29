@@ -1,0 +1,13 @@
+@use "../abstracts/tokens";
+
+@layer layouts {
+	.box {
+		padding: var(--box-padding, #{tokens.$space});
+		border: var(--box-border, none);
+
+		&[data-invert="true"] {
+			background-color: var(--theme-fg);
+			color: var(--theme-bg);
+		}
+	}
+}
