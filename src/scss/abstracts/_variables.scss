@@ -1,3 +1,25 @@
+// fluid scale
+$fluid-min-vw: 320px !default;
+$fluid-max-vw: 1240px !default;
+$fluid-font-sizes: (
+	"100": (0.75rem, 0.8rem),
+	"200": (0.8rem, 0.875rem),
+	"300": (0.875rem, 0.925rem),
+	"400": (0.9rem, 1rem),
+	"500": (1rem, 1.125rem),
+	"600": (1.125rem, 1.25rem),
+	"700": (1.25rem, 1.5rem),
+	"800": (1.5rem, 2rem),
+	"900": (2.5rem, 3.5rem),
+) !default;
+$fluid-spaces: (
+	"xs": (0.5rem, 0.75rem),
+	"sm": (1rem, 1.25rem),
+	"md": (1.5rem, 2rem),
+	"lg": (2.5rem, 3.5rem),
+	"xl": (4rem, 6rem),
+) !default;
+
 // breakpoints
 $breakpoints: (
 	"sm": 640px,

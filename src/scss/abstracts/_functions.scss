@@ -1,5 +1,7 @@
 @use "sass:string";
 @use "sass:map";
+@use "sass:math";
+@use "sass:list";
 
 @use "variables";
 
@@ -126,4 +128,14 @@
 	}
 
 	@return var(--aspect-ratio-#{$key});
+}
+
+// fluid
+@function fluid($min, $max, $min-vw: variables.$fluid-min-vw, $max-vw: variables.$fluid-max-vw) {
+	$min-vw-rem: math.div($min-vw, 16px) * 1rem;
+	$max-vw-rem: math.div($max-vw, 16px) * 1rem;
+	$slope: math.div($max - $min, $max-vw-rem - $min-vw-rem);
+	$intercept: $min - $slope * $min-vw-rem;
+
+	@return clamp(#{$min}, calc(#{$intercept} + #{$slope * 100}vw), #{$max});
 }

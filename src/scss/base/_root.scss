@@ -38,9 +38,14 @@
 			--size-#{$key}: #{$value};
 		}
 
-		// spaces
+		// spaces (fluid where available)
 		@each $key, $value in variables.$spaces {
-			--space-#{$key}: #{$value};
+			@if map.has-key(variables.$fluid-spaces, $key) {
+				$pair: map.get(variables.$fluid-spaces, $key);
+				--space-#{$key}: #{fluid(list.nth($pair, 1), list.nth($pair, 2))};
+			} @else {
+				--space-#{$key}: #{$value};
+			}
 		}
 
 		// radiuses
@@ -48,9 +53,14 @@
 			--radius-#{$key}: #{$value};
 		}
 
-		// font sizes
+		// font sizes (fluid where available)
 		@each $key, $value in variables.$font-sizes {
-			--font-size-#{$key}: #{$value};
+			@if map.has-key(variables.$fluid-font-sizes, $key) {
+				$pair: map.get(variables.$fluid-font-sizes, $key);
+				--font-size-#{$key}: #{fluid(list.nth($pair, 1), list.nth($pair, 2))};
+			} @else {
+				--font-size-#{$key}: #{$value};
+			}
 		}
 
 		// font weights
