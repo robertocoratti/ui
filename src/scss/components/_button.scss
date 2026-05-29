@@ -13,21 +13,12 @@
 
 		@if $key == "background-color" and $value != rgba(0, 0, 0, 0) {
 			&:hover {
-				#{$key}: #{color.adjust($value, $lightness: -5%)};
+				#{$key}: #{color.adjust($value, $lightness: -5%, $space: hsl)};
 			}
 
 			&:active {
-				#{$key}: #{color.adjust($value, $lightness: -10%)};
-				box-shadow: 0
-					0
-					8px
-					4px
-					hsla(
-						color.hue($value),
-						color.saturation($value),
-						color.lightness($value),
-						0.25
-					);
+				#{$key}: #{color.adjust($value, $lightness: -10%, $space: hsl)};
+				box-shadow: 0 0 8px 4px #{color.change($value, $alpha: 0.25)};
 			}
 		}
 	}

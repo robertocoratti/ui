@@ -63,12 +63,6 @@
 	}
 
 	&:is(:active, :focus) {
-		text-shadow: 0 0 4px
-			hsla(
-				color.hue($color),
-				color.saturation($color),
-				color.lightness($color),
-				$active-opacity
-			);
+		text-shadow: 0 0 4px color.change($color, $alpha: $active-opacity);
 	}
 }

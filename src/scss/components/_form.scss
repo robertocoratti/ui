@@ -41,13 +41,7 @@
 		transition: box-shadow 150ms ease-in-out;
 
 		&:is(:focus, :focus-visible) {
-			box-shadow: 0 0 8px 4px
-				hsla(
-					color.hue(list.nth(tokens.$form-input-border, 3)),
-					color.saturation(list.nth(tokens.$form-input-border, 3)),
-					color.lightness(list.nth(tokens.$form-input-border, 3)),
-					0.25
-				);
+			box-shadow: 0 0 8px 4px #{color.change(list.nth(tokens.$form-input-border, 3), $alpha: 0.25)};
 		}
 	}
 
@@ -64,13 +58,7 @@
 			background-size: contain;
 
 			&:is(:focus, :focus-visible) {
-				box-shadow: 0 0 8px 4px
-					hsla(
-						color.hue(tokens.$form-checkbox-background-color),
-						color.saturation(tokens.$form-checkbox-background-color),
-						color.lightness(tokens.$form-checkbox-background-color),
-						0.25
-					);
+				box-shadow: 0 0 8px 4px #{color.change(tokens.$form-checkbox-background-color, $alpha: 0.25)};
 			}
 
 			&:checked {
@@ -91,13 +79,7 @@
 			background-size: contain;
 
 			&:is(:focus, :focus-visible) {
-				box-shadow: 0 0 8px 4px
-					hsla(
-						color.hue(tokens.$form-radio-background-color),
-						color.saturation(tokens.$form-radio-background-color),
-						color.lightness(tokens.$form-radio-background-color),
-						0.25
-					);
+				box-shadow: 0 0 8px 4px #{color.change(tokens.$form-radio-background-color, $alpha: 0.25)};
 			}
 
 			&:checked {
@@ -129,13 +111,7 @@
 		transition: box-shadow 150ms ease-in-out;
 
 		&:focus-visible {
-			box-shadow: 0 0 8px 4px
-				hsla(
-					color.hue(list.nth(tokens.$form-select-border, 3)),
-					color.saturation(list.nth(tokens.$form-select-border, 3)),
-					color.lightness(list.nth(tokens.$form-select-border, 3)),
-					0.25
-				);
+			box-shadow: 0 0 8px 4px #{color.change(list.nth(tokens.$form-select-border, 3), $alpha: 0.25)};
 		}
 
 		& option {
