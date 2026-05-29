@@ -43,48 +43,50 @@
 	}
 }
 
-.button {
-	@include button-variant(tokens.$button-default-variant);
-	@include button-size(tokens.$button-default-size);
+@layer components {
+	.button {
+		@include button-variant(tokens.$button-default-variant);
+		@include button-size(tokens.$button-default-size);
 
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	border: 0;
-	border-radius: tokens.$button-border-radius;
-	text-decoration: none;
-	font-family: tokens.$button-font-family;
-	font-weight: tokens.$button-font-weight;
-	line-height: tokens.$button-line-height;
-	transition:
-		background-color tokens.$button-transition-easing
-			tokens.$button-transition-duration,
-		box-shadow tokens.$button-transition-easing
-			tokens.$button-transition-duration;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		border: 0;
+		border-radius: tokens.$button-border-radius;
+		text-decoration: none;
+		font-family: tokens.$button-font-family;
+		font-weight: tokens.$button-font-weight;
+		line-height: tokens.$button-line-height;
+		transition:
+			background-color tokens.$button-transition-easing
+				tokens.$button-transition-duration,
+			box-shadow tokens.$button-transition-easing
+				tokens.$button-transition-duration;
 
-	&:not(:disabled) {
-		cursor: pointer;
-	}
-
-	@each $key in map.keys(tokens.$button-variants) {
-		$selector: '&[data-variant="#{$key}"]';
-		@if ($key == tokens.$button-default-variant) {
-			$selector: "&, #{$selector}";
+		&:not(:disabled) {
+			cursor: pointer;
 		}
 
-		#{$selector} {
-			@include button-variant($key);
-		}
-	}
+		@each $key in map.keys(tokens.$button-variants) {
+			$selector: '&[data-variant="#{$key}"]';
+			@if ($key == tokens.$button-default-variant) {
+				$selector: "&, #{$selector}";
+			}
 
-	@each $key in map.keys(tokens.$button-sizes) {
-		$selector: '&[data-size="#{$key}"]';
-		@if ($key == tokens.$button-default-size) {
-			$selector: "&, #{$selector}";
+			#{$selector} {
+				@include button-variant($key);
+			}
 		}
 
-		#{$selector} {
-			@include button-size($key);
+		@each $key in map.keys(tokens.$button-sizes) {
+			$selector: '&[data-size="#{$key}"]';
+			@if ($key == tokens.$button-default-size) {
+				$selector: "&, #{$selector}";
+			}
+
+			#{$selector} {
+				@include button-size($key);
+			}
 		}
 	}
 }

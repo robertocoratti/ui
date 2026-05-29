@@ -3,6 +3,8 @@
 @use "../abstracts/tokens";
 @use "../abstracts/mixins";
 
-a {
-	@include mixins.anchor();
+@layer components {
+	a {
+		@include mixins.anchor();
+	}
 }

@@ -1,19 +1,21 @@
 @use "../abstracts/tokens";
 @use "../abstracts/mixins";
 
-.site-header {
-	color: tokens.$site-header-color;
-	background-color: tokens.$site-header-background-color;
-	padding: tokens.$site-header-padding;
+@layer components {
+	.site-header {
+		color: tokens.$site-header-color;
+		background-color: tokens.$site-header-background-color;
+		padding: tokens.$site-header-padding;
 
-	&__inner {
-		display: flex;
-		gap: tokens.$site-header-inner-gap;
-		align-items: tokens.$site-header-inner-align-items;
-		justify-content: center;
+		&__inner {
+			display: flex;
+			gap: tokens.$site-header-inner-gap;
+			align-items: tokens.$site-header-inner-align-items;
+			justify-content: center;
 
-		@include mixins.mq("md") {
-			justify-content: tokens.$site-header-inner-jusitify-content;
+			@include mixins.mq("md") {
+				justify-content: tokens.$site-header-inner-jusitify-content;
+			}
 		}
 	}
 }

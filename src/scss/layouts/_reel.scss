@@ -4,47 +4,49 @@
 @use "../abstracts/tokens";
 @use "../abstracts/functions" as *;
 
-.reel {
-	display: flex;
-	block-size: auto;
-	overflow-x: auto;
-	overflow-y: hidden;
+@layer layouts {
+	.reel {
+		display: flex;
+		block-size: auto;
+		overflow-x: auto;
+		overflow-y: hidden;
 
-	&::-webkit-scrollbar-thumb {
-		background-image: tokens.$reel-scrollbar-thumb-background-image;
-	}
-
-	& > * {
-		flex: 0 0 auto;
-	}
-
-	& > img {
-		block-size: 100%;
-		flex-basis: auto;
-		width: auto;
-	}
-
-	@each $key in map.keys(variables.$spaces) {
-		$selector: '&[data-space="#{$key}"] > * + *';
-
-		@if (tokens.$space == space($key)) {
-			$selector: "& > * + *, #{$selector}";
+		&::-webkit-scrollbar-thumb {
+			background-image: tokens.$reel-scrollbar-thumb-background-image;
 		}
 
-		#{$selector} {
-			margin-inline-start: space("#{$key}");
-		}
-	}
-
-	@each $key in map.keys(variables.$spaces) {
-		$selector: '&[data-space="#{$key}"].overflowing';
-
-		@if (tokens.$space == space($key)) {
-			$selector: "&.overflowing, #{$selector}";
+		& > * {
+			flex: 0 0 auto;
 		}
 
-		#{$selector} {
-			padding-block-end: space("#{$key}");
+		& > img {
+			block-size: 100%;
+			flex-basis: auto;
+			width: auto;
+		}
+
+		@each $key in map.keys(variables.$spaces) {
+			$selector: '&[data-space="#{$key}"] > * + *';
+
+			@if (tokens.$space == space($key)) {
+				$selector: "& > * + *, #{$selector}";
+			}
+
+			#{$selector} {
+				margin-inline-start: space("#{$key}");
+			}
+		}
+
+		@each $key in map.keys(variables.$spaces) {
+			$selector: '&[data-space="#{$key}"].overflowing';
+
+			@if (tokens.$space == space($key)) {
+				$selector: "&.overflowing, #{$selector}";
+			}
+
+			#{$selector} {
+				padding-block-end: space("#{$key}");
+			}
 		}
 	}
 }

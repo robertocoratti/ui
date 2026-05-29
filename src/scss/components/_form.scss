@@ -3,159 +3,159 @@
 
 @use "../abstracts/tokens";
 
-select,
-label,
-input:is(
-		[type="checkbox"],
-		[type="color"],
-		[type="date"],
-		[type="datetime-local"],
-		[type="file"],
-		[type="month"],
-		[type="radio"],
-		[type="range"],
-		[type="time"],
-		[type="week"]
-	) {
-	cursor: pointer;
-}
-
-label {
-	color: tokens.$form-label-color;
-	font-family: tokens.$form-label-font-family;
-	font-weight: tokens.$form-label-font-weight;
-	font-size: tokens.$form-label-font-size;
-}
-
-input:not(.button),
-textarea {
-	display: block;
-	padding: tokens.$form-input-padding;
-	border-radius: tokens.$form-input-border-radius;
-	border: tokens.$form-input-border;
-	color: tokens.$form-input-color;
-	background-color: tokens.$form-input-background-color;
-	font-size: tokens.$form-input-font-size;
-	font-weight: tokens.$form-input-font-weight;
-	transition: box-shadow 150ms ease-in-out;
-
-	&:is(:focus, :focus-visible) {
-		box-shadow: 0 0 8px 4px
-			hsla(
-				color.hue(list.nth(tokens.$form-input-border, 3)),
-				color.saturation(list.nth(tokens.$form-input-border, 3)),
-				color.lightness(list.nth(tokens.$form-input-border, 3)),
-				0.25
-			);
-	}
-}
-
-input:not(.button) {
-	[type="checkbox"] {
-		appearance: none;
-		padding: tokens.$form-checkbox-padding;
-		height: tokens.$form-checkbox-size;
-		width: tokens.$form-checkbox-size;
-		border: tokens.$form-checkbox-border;
-		border-radius: tokens.$form-checkbox-border-radius;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: contain;
-
-		&:is(:focus, :focus-visible) {
-			box-shadow: 0 0 8px 4px
-				hsla(
-					color.hue(tokens.$form-checkbox-background-color),
-					color.saturation(tokens.$form-checkbox-background-color),
-					color.lightness(tokens.$form-checkbox-background-color),
-					0.25
-				);
-		}
-
-		&:checked {
-			background-color: tokens.$form-checkbox-background-color;
-			background-image: tokens.$form-checkbox-background-image;
-		}
-	}
-
-	[type="radio"] {
-		appearance: none;
-		padding: tokens.$form-radio-padding;
-		height: tokens.$form-radio-size;
-		width: tokens.$form-radio-size;
-		border: tokens.$form-radio-border;
-		border-radius: tokens.$form-radio-border-radius;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: contain;
-
-		&:is(:focus, :focus-visible) {
-			box-shadow: 0 0 8px 4px
-				hsla(
-					color.hue(tokens.$form-radio-background-color),
-					color.saturation(tokens.$form-radio-background-color),
-					color.lightness(tokens.$form-radio-background-color),
-					0.25
-				);
-		}
-
-		&:checked {
-			background-color: tokens.$form-radio-background-color;
-			background-image: tokens.$form-radio-background-image;
-		}
-	}
-
-	[type="color"] {
-		padding: 0;
-	}
-}
-
-select {
-	display: block;
-	appearance: none;
-	padding: tokens.$form-select-padding;
-	padding-right: tokens.$form-select-space-caret;
-	border-radius: tokens.$form-select-border-radius;
-	border: tokens.$form-select-border;
-	color: tokens.$form-select-color;
-	background-color: tokens.$form-select-background-color;
-	font-size: tokens.$form-select-font-size;
-	font-weight: tokens.$form-select-font-weight;
-	background-image: var(--bs-form-select-bg-img),
-		var(--bs-form-select-bg-icon, none);
-	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23dee2e6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
-	background-repeat: no-repeat;
-	background-position: right 0.75rem center;
-	background-size: 16px 12px;
-	transition: box-shadow 150ms ease-in-out;
-
-	&:focus-visible {
-		box-shadow: 0 0 8px 4px
-			hsla(
-				color.hue(list.nth(tokens.$form-select-border, 3)),
-				color.saturation(list.nth(tokens.$form-select-border, 3)),
-				color.lightness(list.nth(tokens.$form-select-border, 3)),
-				0.25
-			);
-	}
-
-	& option {
-		display: block;
-		padding: tokens.$form-select-option-padding;
-		font-size: tokens.$form-select-option-font-size;
-		font-weight: tokens.$form-select-option-font-weight;
-		white-space-collapse: collapse;
-		text-wrap: nowrap;
+@layer components {
+	select,
+	label,
+	input:is(
+			[type="checkbox"],
+			[type="color"],
+			[type="date"],
+			[type="datetime-local"],
+			[type="file"],
+			[type="month"],
+			[type="radio"],
+			[type="range"],
+			[type="time"],
+			[type="week"]
+		) {
 		cursor: pointer;
+	}
 
-		&:disabled {
-			color: tokens.$form-placeholder-color;
-			font-family: tokens.$form-placeholder-font-family;
+	label {
+		color: tokens.$form-label-color;
+		font-family: tokens.$form-label-font-family;
+		font-weight: tokens.$form-label-font-weight;
+		font-size: tokens.$form-label-font-size;
+	}
+
+	input:not(.button),
+	textarea {
+		display: block;
+		padding: tokens.$form-input-padding;
+		border-radius: tokens.$form-input-border-radius;
+		border: tokens.$form-input-border;
+		color: tokens.$form-input-color;
+		background-color: tokens.$form-input-background-color;
+		font-size: tokens.$form-input-font-size;
+		font-weight: tokens.$form-input-font-weight;
+		transition: box-shadow 150ms ease-in-out;
+
+		&:is(:focus, :focus-visible) {
+			box-shadow: 0 0 8px 4px
+				hsla(
+					color.hue(list.nth(tokens.$form-input-border, 3)),
+					color.saturation(list.nth(tokens.$form-input-border, 3)),
+					color.lightness(list.nth(tokens.$form-input-border, 3)),
+					0.25
+				);
 		}
 	}
-}
 
-::placeholder {
-	color: tokens.$form-placeholder-color;
-	font-family: tokens.$form-placeholder-font-family;
+	input:not(.button) {
+		[type="checkbox"] {
+			appearance: none;
+			padding: tokens.$form-checkbox-padding;
+			height: tokens.$form-checkbox-size;
+			width: tokens.$form-checkbox-size;
+			border: tokens.$form-checkbox-border;
+			border-radius: tokens.$form-checkbox-border-radius;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+
+			&:is(:focus, :focus-visible) {
+				box-shadow: 0 0 8px 4px
+					hsla(
+						color.hue(tokens.$form-checkbox-background-color),
+						color.saturation(tokens.$form-checkbox-background-color),
+						color.lightness(tokens.$form-checkbox-background-color),
+						0.25
+					);
+			}
+
+			&:checked {
+				background-color: tokens.$form-checkbox-background-color;
+				background-image: tokens.$form-checkbox-background-image;
+			}
+		}
+
+		[type="radio"] {
+			appearance: none;
+			padding: tokens.$form-radio-padding;
+			height: tokens.$form-radio-size;
+			width: tokens.$form-radio-size;
+			border: tokens.$form-radio-border;
+			border-radius: tokens.$form-radio-border-radius;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+
+			&:is(:focus, :focus-visible) {
+				box-shadow: 0 0 8px 4px
+					hsla(
+						color.hue(tokens.$form-radio-background-color),
+						color.saturation(tokens.$form-radio-background-color),
+						color.lightness(tokens.$form-radio-background-color),
+						0.25
+					);
+			}
+
+			&:checked {
+				background-color: tokens.$form-radio-background-color;
+				background-image: tokens.$form-radio-background-image;
+			}
+		}
+
+		[type="color"] {
+			padding: 0;
+		}
+	}
+
+	select {
+		display: block;
+		appearance: none;
+		padding: tokens.$form-select-padding;
+		padding-right: tokens.$form-select-space-caret;
+		border-radius: tokens.$form-select-border-radius;
+		border: tokens.$form-select-border;
+		color: tokens.$form-select-color;
+		background-color: tokens.$form-select-background-color;
+		font-size: tokens.$form-select-font-size;
+		font-weight: tokens.$form-select-font-weight;
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23dee2e6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+		background-repeat: no-repeat;
+		background-position: right 0.75rem center;
+		background-size: 16px 12px;
+		transition: box-shadow 150ms ease-in-out;
+
+		&:focus-visible {
+			box-shadow: 0 0 8px 4px
+				hsla(
+					color.hue(list.nth(tokens.$form-select-border, 3)),
+					color.saturation(list.nth(tokens.$form-select-border, 3)),
+					color.lightness(list.nth(tokens.$form-select-border, 3)),
+					0.25
+				);
+		}
+
+		& option {
+			display: block;
+			padding: tokens.$form-select-option-padding;
+			font-size: tokens.$form-select-option-font-size;
+			font-weight: tokens.$form-select-option-font-weight;
+			white-space-collapse: collapse;
+			text-wrap: nowrap;
+			cursor: pointer;
+
+			&:disabled {
+				color: tokens.$form-placeholder-color;
+				font-family: tokens.$form-placeholder-font-family;
+			}
+		}
+	}
+
+	::placeholder {
+		color: tokens.$form-placeholder-color;
+		font-family: tokens.$form-placeholder-font-family;
+	}
 }

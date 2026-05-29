@@ -3,212 +3,214 @@
 @use "../abstracts/variables";
 @use "../abstracts/functions" as *;
 
-// colors
-@each $key, $shades in variables.$colors {
-	@each $shade in map.keys($shades) {
-		.bg-#{$key}-#{$shade} {
-			background-color: #{color($key, $shade)};
-		}
+@layer utilities {
+	// colors
+	@each $key, $shades in variables.$colors {
+		@each $shade in map.keys($shades) {
+			.bg-#{$key}-#{$shade} {
+				background-color: #{color($key, $shade)};
+			}
 
-		.text-#{$key}-#{$shade} {
-			color: #{color($key, $shade)};
-		}
-	}
-}
-
-// sizing
-@each $key, $value in ("fit": "fit-content", "full": "100%") {
-	.min-h-#{$key} {
-		min-height: #{$value};
-	}
-
-	.h-#{$key} {
-		height: #{$value};
-	}
-
-	.max-h-#{$key} {
-		max-height: #{$value};
-	}
-
-	.min-w-#{$key} {
-		min-width: #{$value};
-	}
-
-	.w-#{$key} {
-		width: #{$value};
-	}
-
-	.max-w-#{$key} {
-		max-width: #{$value};
-	}
-}
-
-@each $key in map.keys(variables.$sizes) {
-	.min-w-#{$key} {
-		min-width: #{size($key)};
-	}
-
-	.w-#{$key} {
-		width: #{size($key)};
-	}
-
-	.max-w-#{$key} {
-		max-width: #{size($key)};
-	}
-
-	.min-h-#{$key} {
-		min-height: #{size($key)};
-	}
-
-	.h-#{$key} {
-		height: #{size($key)};
-	}
-
-	.max-h-#{$key} {
-		max-height: #{size($key)};
-	}
-}
-
-// text align
-@each $value in ("start", "center", "end") {
-	.text-#{$value} {
-		text-align: #{$value};
-	}
-}
-
-// justify
-@each $key,
-	$value
-		in (
-			"start": "start",
-			"center": "center",
-			"end": "end",
-			"between": "space-between",
-			"around": "space-around",
-			"evenly": "space-evenly"
-		)
-{
-	.justify-content-#{$key} {
-		justify-content: #{$value};
-	}
-}
-
-@each $value in ("start", "center", "end", "stretch") {
-	.justify-items-#{$value} {
-		justify-items: #{$value};
-	}
-
-	.justify-self-#{$value} {
-		justify-self: #{$value};
-	}
-}
-
-// align
-@each $value in ("start", "center", "end") {
-	.align-content-#{$value} {
-		align-content: #{$value};
-	}
-
-	.align-items-#{$value} {
-		align-items: #{$value};
-	}
-}
-
-// place
-@each $value in ("start", "center", "end") {
-	.place-content-#{$value} {
-		place-content: #{$value};
-	}
-
-	.place-items-#{$value} {
-		place-items: #{$value};
-	}
-}
-
-// space
-.mx-auto {
-	margin-inline: auto;
-}
-
-@each $key in map.keys(variables.$spaces) {
-	.m {
-		&-#{$key} {
-			margin: space($key);
-		}
-		&t-#{$key} {
-			margin-block-start: space($key);
-		}
-		&b-#{$key} {
-			margin-block-end: space($key);
-		}
-		&y-#{$key} {
-			margin-block: space($key);
-		}
-		&l-#{$key} {
-			margin-inline-start: space($key);
-		}
-		&r-#{$key} {
-			margin-inline-end: space($key);
-		}
-		&x-#{$key} {
-			margin-inline: space($key);
+			.text-#{$key}-#{$shade} {
+				color: #{color($key, $shade)};
+			}
 		}
 	}
 
-	.p {
-		&-#{$key} {
-			padding: space($key);
+	// sizing
+	@each $key, $value in ("fit": "fit-content", "full": "100%") {
+		.min-h-#{$key} {
+			min-height: #{$value};
 		}
-		&t-#{$key} {
-			padding-block-start: space($key);
+
+		.h-#{$key} {
+			height: #{$value};
 		}
-		&b-#{$key} {
-			padding-block-end: space($key);
+
+		.max-h-#{$key} {
+			max-height: #{$value};
 		}
-		&y-#{$key} {
-			padding-block: space($key);
+
+		.min-w-#{$key} {
+			min-width: #{$value};
 		}
-		&l-#{$key} {
-			padding-inline-start: space($key);
+
+		.w-#{$key} {
+			width: #{$value};
 		}
-		&r-#{$key} {
-			padding-inline-end: space($key);
-		}
-		&x-#{$key} {
-			padding-inline: space($key);
+
+		.max-w-#{$key} {
+			max-width: #{$value};
 		}
 	}
-}
 
-// radiuses
-@each $key in map.keys(variables.$radiuses) {
-	.radius-#{$key} {
-		border-radius: radius($key);
+	@each $key in map.keys(variables.$sizes) {
+		.min-w-#{$key} {
+			min-width: #{size($key)};
+		}
+
+		.w-#{$key} {
+			width: #{size($key)};
+		}
+
+		.max-w-#{$key} {
+			max-width: #{size($key)};
+		}
+
+		.min-h-#{$key} {
+			min-height: #{size($key)};
+		}
+
+		.h-#{$key} {
+			height: #{size($key)};
+		}
+
+		.max-h-#{$key} {
+			max-height: #{size($key)};
+		}
 	}
-}
 
-// typography
-@each $key in map.keys(variables.$font-sizes) {
-	.text-#{$key} {
-		font-size: font-size($key);
+	// text align
+	@each $value in ("start", "center", "end") {
+		.text-#{$value} {
+			text-align: #{$value};
+		}
 	}
-}
 
-@each $key in map.keys(variables.$font-weights) {
-	.font-#{$key} {
-		font-weight: font-weight($key);
+	// justify
+	@each $key,
+		$value
+			in (
+				"start": "start",
+				"center": "center",
+				"end": "end",
+				"between": "space-between",
+				"around": "space-around",
+				"evenly": "space-evenly"
+			)
+	{
+		.justify-content-#{$key} {
+			justify-content: #{$value};
+		}
 	}
-}
 
-@each $key in map.keys(variables.$font-families) {
-	.font-#{$key} {
-		font-family: font-family($key);
+	@each $value in ("start", "center", "end", "stretch") {
+		.justify-items-#{$value} {
+			justify-items: #{$value};
+		}
+
+		.justify-self-#{$value} {
+			justify-self: #{$value};
+		}
 	}
-}
 
-// shadows
-@each $key in map.keys(variables.$shadows) {
-	.shadow-#{$key} {
-		box-shadow: shadow($key);
+	// align
+	@each $value in ("start", "center", "end") {
+		.align-content-#{$value} {
+			align-content: #{$value};
+		}
+
+		.align-items-#{$value} {
+			align-items: #{$value};
+		}
+	}
+
+	// place
+	@each $value in ("start", "center", "end") {
+		.place-content-#{$value} {
+			place-content: #{$value};
+		}
+
+		.place-items-#{$value} {
+			place-items: #{$value};
+		}
+	}
+
+	// space
+	.mx-auto {
+		margin-inline: auto;
+	}
+
+	@each $key in map.keys(variables.$spaces) {
+		.m {
+			&-#{$key} {
+				margin: space($key);
+			}
+			&t-#{$key} {
+				margin-block-start: space($key);
+			}
+			&b-#{$key} {
+				margin-block-end: space($key);
+			}
+			&y-#{$key} {
+				margin-block: space($key);
+			}
+			&l-#{$key} {
+				margin-inline-start: space($key);
+			}
+			&r-#{$key} {
+				margin-inline-end: space($key);
+			}
+			&x-#{$key} {
+				margin-inline: space($key);
+			}
+		}
+
+		.p {
+			&-#{$key} {
+				padding: space($key);
+			}
+			&t-#{$key} {
+				padding-block-start: space($key);
+			}
+			&b-#{$key} {
+				padding-block-end: space($key);
+			}
+			&y-#{$key} {
+				padding-block: space($key);
+			}
+			&l-#{$key} {
+				padding-inline-start: space($key);
+			}
+			&r-#{$key} {
+				padding-inline-end: space($key);
+			}
+			&x-#{$key} {
+				padding-inline: space($key);
+			}
+		}
+	}
+
+	// radiuses
+	@each $key in map.keys(variables.$radiuses) {
+		.radius-#{$key} {
+			border-radius: radius($key);
+		}
+	}
+
+	// typography
+	@each $key in map.keys(variables.$font-sizes) {
+		.text-#{$key} {
+			font-size: font-size($key);
+		}
+	}
+
+	@each $key in map.keys(variables.$font-weights) {
+		.font-#{$key} {
+			font-weight: font-weight($key);
+		}
+	}
+
+	@each $key in map.keys(variables.$font-families) {
+		.font-#{$key} {
+			font-family: font-family($key);
+		}
+	}
+
+	// shadows
+	@each $key in map.keys(variables.$shadows) {
+		.shadow-#{$key} {
+			box-shadow: shadow($key);
+		}
 	}
 }

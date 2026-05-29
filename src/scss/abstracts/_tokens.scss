@@ -1,32 +1,29 @@
 @use "functions" as *;
 
-// root
-$color-scheme: dark;
-
 // default
-$size: size("10");
-$space: space("md");
+$size: size("10") !default;
+$space: space("md") !default;
 
 // body
-$body-min-height: 100dvh;
-$body-overflow-x: hidden;
-$body-background-color: ("base", "800");
-$body-color: color("primary", "400");
-$body-font-family: font-family("sans");
-$body-line-height: 1.5;
+$body-min-height: 100dvh !default;
+$body-overflow-x: hidden !default;
+$body-background-color: var(--theme-bg) !default;
+$body-color: var(--theme-fg) !default;
+$body-font-family: font-family("sans") !default;
+$body-line-height: 1.5 !default;
 
 // scrollbar
-$scrollbar-size: size("3");
-$scrollbar-border-radius: 0;
-$scrollbar-track-color: color("base", "700");
-$scrollbar-thumb-color: color("secondary", "200");
+$scrollbar-size: size("3") !default;
+$scrollbar-border-radius: 0 !default;
+$scrollbar-track-color: color("base", "700") !default;
+$scrollbar-thumb-color: color("secondary", "200") !default;
 $scrollbar-thumb-background-image: linear-gradient(
 	90deg,
 	$scrollbar-track-color 25%,
 	$scrollbar-thumb-color 25%,
 	$scrollbar-thumb-color 75%,
 	$scrollbar-track-color 75%
-);
+) !default;
 
 // reel
 $reel-scrollbar-thumb-background-image: linear-gradient(
@@ -34,36 +31,36 @@ $reel-scrollbar-thumb-background-image: linear-gradient(
 	$scrollbar-thumb-color 25%,
 	$scrollbar-thumb-color 75%,
 	$scrollbar-track-color 75%
-);
+) !default;
 
 // heading
-$heading-color: color("accent", "200");
-$heading-text-transform: none;
-$heading-line-height: 1;
-$heading-letter-spacing: normal;
-$heading-font-family: font-family("serif");
-$heading-font-weight: font-weight("regular");
+$heading-color: var(--theme-heading) !default;
+$heading-text-transform: none !default;
+$heading-line-height: 1 !default;
+$heading-letter-spacing: normal !default;
+$heading-font-family: font-family("serif") !default;
+$heading-font-weight: font-weight("regular") !default;
 $heading-font-sizes: (
 	"1": font-size("900"),
 	"2": font-size("800"),
 	"3": font-size("700"),
-);
+) !default;
 
 // anchor
-$anchor-text-decoration: underline;
-$anchor-text-underline-offset: 0.15rem;
-$anchor-color: color("base", "200", false);
-$anchor-visited-color: color("base", "400");
-$anchor-hover-color: color("base", "300");
-$anchor-active-opacity: 0.75;
+$anchor-text-decoration: underline !default;
+$anchor-text-underline-offset: 0.15rem !default;
+$anchor-color: color("base", "200", false) !default;
+$anchor-visited-color: color("base", "400") !default;
+$anchor-hover-color: color("base", "300") !default;
+$anchor-active-opacity: 0.75 !default;
 
 // button
-$button-border-radius: radius("2");
-$button-font-family: font-family("serif");
-$button-font-weight: font-weight("semibold");
-$button-line-height: 1.25;
-$button-transition-easing: ease-in-out;
-$button-transition-duration: 75ms;
+$button-border-radius: radius("2") !default;
+$button-font-family: font-family("serif") !default;
+$button-font-weight: font-weight("semibold") !default;
+$button-line-height: 1.25 !default;
+$button-transition-easing: ease-in-out !default;
+$button-transition-duration: 75ms !default;
 $button-variants: (
 	"primary": (
 		"background-color": hsl(79, 58%, 81%),
@@ -82,7 +79,7 @@ $button-variants: (
 		"color": hsl(79, 58%, 81%),
 		"font-weight": font-weight("regular"),
 	),
-);
+) !default;
 $button-sizes: (
 	"sm": (
 		"padding": size("1") size("2"),
@@ -96,99 +93,99 @@ $button-sizes: (
 		"padding": size("2") size("4"),
 		"font-size": font-size("700"),
 	),
-);
-$button-default-variant: "primary";
-$button-default-size: "md";
+) !default;
+$button-default-variant: "primary" !default;
+$button-default-size: "md" !default;
 
 // card
-$card-background-color: color("base", "800");
-$card-space: $space;
-$card-padding: space("sm");
-$card-border: none;
-$card-border-radius: radius("2");
-$card-line-height: 1.25;
-$card-heading-size: "2";
+$card-background-color: color("base", "800") !default;
+$card-space: $space !default;
+$card-padding: space("sm") !default;
+$card-border: none !default;
+$card-border-radius: radius("2") !default;
+$card-line-height: 1.25 !default;
+$card-heading-size: "2" !default;
 
 // form label
-$form-label-color: color("secondary", "200");
-$form-label-font-family: font-family("serif");
-$form-label-font-weight: font-weight("medium");
-$form-label-font-size: font-size("500");
+$form-label-color: color("secondary", "200") !default;
+$form-label-font-family: font-family("serif") !default;
+$form-label-font-weight: font-weight("medium") !default;
+$form-label-font-size: font-size("500") !default;
 
 // form input
-$form-input-padding: space("xs");
-$form-input-border-radius: radius("2");
-$form-input-border: 1px outset color("secondary", "200", false);
-$form-input-color: color("secondary", "200");
-$form-input-background-color: color("base", "800");
-$form-input-font-size: font-size("300");
-$form-input-font-weight: font-weight("regular");
+$form-input-padding: space("xs") !default;
+$form-input-border-radius: radius("2") !default;
+$form-input-border: 1px outset color("secondary", "200", false) !default;
+$form-input-color: color("secondary", "200") !default;
+$form-input-background-color: color("base", "800") !default;
+$form-input-font-size: font-size("300") !default;
+$form-input-font-weight: font-weight("regular") !default;
 
 // form checkbox
-$form-checkbox-padding: space("xs");
-$form-checkbox-size: size("4");
-$form-checkbox-mark-color: color("base", "800", false);
-$form-checkbox-background-color: color("accent", "200", false);
-$form-checkbox-border: 1px outset color("accent", "200");
-$form-checkbox-border-radius: radius("1");
+$form-checkbox-padding: space("xs") !default;
+$form-checkbox-size: size("4") !default;
+$form-checkbox-mark-color: color("base", "800", false) !default;
+$form-checkbox-background-color: color("accent", "200", false) !default;
+$form-checkbox-border: 1px outset color("accent", "200") !default;
+$form-checkbox-border-radius: radius("1") !default;
 // unicons
-$form-checkbox-background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='#{$form-checkbox-mark-color}' stroke-width='3' d='M18.71 7.21a1 1 0 0 0-1.42 0l-7.45 7.46l-3.13-3.14A1 1 0 1 0 5.29 13l3.84 3.84a1 1 0 0 0 1.42 0l8.16-8.16a1 1 0 0 0 0-1.47Z'/%3e%3c/svg%3e");
+$form-checkbox-background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='#{$form-checkbox-mark-color}' stroke-width='3' d='M18.71 7.21a1 1 0 0 0-1.42 0l-7.45 7.46l-3.13-3.14A1 1 0 1 0 5.29 13l3.84 3.84a1 1 0 0 0 1.42 0l8.16-8.16a1 1 0 0 0 0-1.47Z'/%3e%3c/svg%3e") !default;
 
 // form radio
-$form-radio-padding: size("2");
-$form-radio-size: size("2");
-$form-radio-mark-color: color("base", "800", false);
-$form-radio-background-color: color("accent", "200", false);
-$form-radio-border: 1px outset color("accent", "200");
-$form-radio-border-radius: radius("3");
+$form-radio-padding: size("2") !default;
+$form-radio-size: size("2") !default;
+$form-radio-mark-color: color("base", "800", false) !default;
+$form-radio-background-color: color("accent", "200", false) !default;
+$form-radio-border: 1px outset color("accent", "200") !default;
+$form-radio-border-radius: radius("3") !default;
 // unicons
-$form-radio-background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='#{$form-radio-mark-color}' stroke-width='3' d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8a8 8 0 0 1-8 8Z' /%3e%3c/svg%3e");
+$form-radio-background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='#{$form-radio-mark-color}' stroke-width='3' d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8a8 8 0 0 1-8 8Z' /%3e%3c/svg%3e") !default;
 
 // form select
-$form-select-padding: $form-input-padding;
-$form-select-space-caret: space("lg");
-$form-select-border-radius: $form-input-border-radius;
-$form-select-border: $form-input-border;
-$form-select-color: $form-input-color;
-$form-select-background-color: $form-input-background-color;
-$form-select-font-size: $form-input-font-size;
-$form-select-font-weight: $form-input-font-weight;
+$form-select-padding: $form-input-padding !default;
+$form-select-space-caret: space("lg") !default;
+$form-select-border-radius: $form-input-border-radius !default;
+$form-select-border: $form-input-border !default;
+$form-select-color: $form-input-color !default;
+$form-select-background-color: $form-input-background-color !default;
+$form-select-font-size: $form-input-font-size !default;
+$form-select-font-weight: $form-input-font-weight !default;
 
 // form select option
-$form-select-option-padding: $form-input-padding;
-$form-select-option-font-size: $form-input-font-size;
-$form-select-option-font-weight: $form-input-font-weight;
+$form-select-option-padding: $form-input-padding !default;
+$form-select-option-font-size: $form-input-font-size !default;
+$form-select-option-font-weight: $form-input-font-weight !default;
 
 // form placeholder
-$form-placeholder-color: color("base", "400");
-$form-placeholder-font-family: inherit;
+$form-placeholder-color: color("base", "400") !default;
+$form-placeholder-font-family: inherit !default;
 
 // navigation
-$navigation-font-family: font-family("sans");
-$navigation-font-weight: font-weight("regular");
-$navigation-anchor-text-decoration: none;
-$navigation-anchor-color: color("secondary", "200", false);
-$navigation-anchor-visited-color: $navigation-anchor-color;
-$navigation-anchor-hover-color: color("secondary", "400");
+$navigation-font-family: font-family("sans") !default;
+$navigation-font-weight: font-weight("regular") !default;
+$navigation-anchor-text-decoration: none !default;
+$navigation-anchor-color: color("secondary", "200", false) !default;
+$navigation-anchor-visited-color: $navigation-anchor-color !default;
+$navigation-anchor-hover-color: color("secondary", "400") !default;
 
 // spinner
-$spinner-background-color: color("base", "700");
-$spinner-color: color("secondary", "200", false);
+$spinner-background-color: color("base", "700") !default;
+$spinner-color: color("secondary", "200", false) !default;
 
 // site header
-$site-header-color: color("base", "600");
-$site-header-background-color: color("base", "900");
-$site-header-padding: space("sm") space("md");
-$site-header-inner-gap: space("md");
-$site-header-inner-align-items: center;
-$site-header-inner-jusitify-content: space-between;
+$site-header-color: color("base", "600") !default;
+$site-header-background-color: color("base", "900") !default;
+$site-header-padding: space("sm") space("md") !default;
+$site-header-inner-gap: space("md") !default;
+$site-header-inner-align-items: center !default;
+$site-header-inner-jusitify-content: space-between !default;
 
 // site footer
-$site-footer-background-color: $site-header-background-color;
-$site-footer-color: color("base", "600");
-$site-footer-anchor-font-family: font-family("sans");
-$site-footer-anchor-letter-spacing: 1px;
-$site-footer-anchor-text-decoration: none;
-$site-footer-anchor-color: color("base", "400", false);
-$site-footer-anchor-visited-color: $site-footer-anchor-color;
-$site-footer-anchor-hover-color: color("base", "200");
+$site-footer-background-color: $site-header-background-color !default;
+$site-footer-color: color("base", "600") !default;
+$site-footer-anchor-font-family: font-family("sans") !default;
+$site-footer-anchor-letter-spacing: 1px !default;
+$site-footer-anchor-text-decoration: none !default;
+$site-footer-anchor-color: color("base", "400", false) !default;
+$site-footer-anchor-visited-color: $site-footer-anchor-color !default;
+$site-footer-anchor-hover-color: color("base", "200") !default;

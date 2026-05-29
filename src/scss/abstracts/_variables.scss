@@ -136,7 +136,7 @@ $border-widths: (
 	"thin": 1px,
 	"regular": 2px,
 	"large": 3px,
-);
+) !default;
 
 // shadows
 $shadows: (
@@ -164,4 +164,20 @@ $aspect-ratios: (
 	"4-3": "4/3",
 	"16-9": "16/9",
 	"21-9": "21/9",
-);
+) !default;
+
+// color themes
+$color-themes: (
+	"light": (
+		"bg": ("base", "100"),
+		"fg": ("primary", "700"),
+		"heading": ("accent", "700"),
+		"focus": ("accent", "500"),
+	),
+	"dark": (
+		"bg": ("base", "800"),
+		"fg": ("primary", "400"),
+		"heading": ("accent", "200"),
+		"focus": ("accent", "400"),
+	),
+) !default;

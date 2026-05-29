@@ -12,28 +12,30 @@ $weights: (
 	"900": "Black",
 );
 
-@each $key, $value in $weights {
-	// sans
-	@font-face {
-		font-family: "DM Sans";
-		font-weight: #{$key};
-		font-display: swap;
-		src: url("#{$font-path}/DMSans/static/DMSans-#{$value}.ttf") format("truetype");
-	}
+@layer base {
+	@each $key, $value in $weights {
+		// sans
+		@font-face {
+			font-family: "DM Sans";
+			font-weight: #{$key};
+			font-display: swap;
+			src: url("#{$font-path}/DMSans/static/DMSans-#{$value}.ttf") format("truetype");
+		}
 
-	// serif
-	@font-face {
-		font-family: "Poppins";
-		font-weight: #{$key};
-		font-display: swap;
-		src: url("#{$font-path}/Poppins/Poppins-#{$value}.ttf") format("truetype");
-	}
+		// serif
+		@font-face {
+			font-family: "Poppins";
+			font-weight: #{$key};
+			font-display: swap;
+			src: url("#{$font-path}/Poppins/Poppins-#{$value}.ttf") format("truetype");
+		}
 
-	// mono
-	@font-face {
-		font-family: "IBM Plex Mono";
-		font-weight: #{$key};
-		font-display: swap;
-		src: url("#{$font-path}/IBMPlexMono/IBMPlexMono-#{$value}.ttf") format("truetype");
+		// mono
+		@font-face {
+			font-family: "IBM Plex Mono";
+			font-weight: #{$key};
+			font-display: swap;
+			src: url("#{$font-path}/IBMPlexMono/IBMPlexMono-#{$value}.ttf") format("truetype");
+		}
 	}
 }

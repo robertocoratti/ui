@@ -3,8 +3,10 @@
 @use "../abstracts/tokens";
 @use "../abstracts/mixins";
 
-@each $key in map.keys(tokens.$heading-font-sizes) {
-	.heading-#{$key} {
-		@include mixins.heading($key);
+@layer components {
+	@each $key in map.keys(tokens.$heading-font-sizes) {
+		.heading-#{$key} {
+			@include mixins.heading($key);
+		}
 	}
 }

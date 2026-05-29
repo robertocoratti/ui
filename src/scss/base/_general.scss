@@ -1,48 +1,50 @@
 @use "../abstracts/tokens";
 
-body {
-	min-height: tokens.$body-min-height;
-	overflow-x: tokens.$body-overflow-x;
-	background-color: tokens.$body-background-color;
-	color: tokens.$body-color;
-	font-family: tokens.$body-font-family;
-	line-height: tokens.$body-line-height;
-}
+@layer base {
+	body {
+		min-height: tokens.$body-min-height;
+		overflow-x: tokens.$body-overflow-x;
+		background-color: tokens.$body-background-color;
+		color: tokens.$body-color;
+		font-family: tokens.$body-font-family;
+		line-height: tokens.$body-line-height;
+	}
 
-h1,
-h2,
-h3 {
-	line-height: tokens.$heading-line-height;
-}
+	h1,
+	h2,
+	h3 {
+		line-height: tokens.$heading-line-height;
+	}
 
-table {
-	border-collapse: collapse;
-}
+	table {
+		border-collapse: collapse;
+	}
 
-th {
-	text-align: left;
-}
+	th {
+		text-align: left;
+	}
 
-body::-webkit-scrollbar-track {
-	border-radius: 0;
-}
+	body::-webkit-scrollbar-track {
+		border-radius: 0;
+	}
 
-* {
-	scrollbar-color: tokens.$scrollbar-thumb-color tokens.$scrollbar-track-color;
-}
+	* {
+		scrollbar-color: tokens.$scrollbar-thumb-color tokens.$scrollbar-track-color;
+	}
 
-*::-webkit-scrollbar {
-	block-size: tokens.$scrollbar-size;
-	inline-size: tokens.$scrollbar-size;
-}
+	*::-webkit-scrollbar {
+		block-size: tokens.$scrollbar-size;
+		inline-size: tokens.$scrollbar-size;
+	}
 
-*::-webkit-scrollbar-track {
-	background-color: tokens.$scrollbar-track-color;
-	border-radius: tokens.$scrollbar-border-radius;
-}
+	*::-webkit-scrollbar-track {
+		background-color: tokens.$scrollbar-track-color;
+		border-radius: tokens.$scrollbar-border-radius;
+	}
 
-*::-webkit-scrollbar-thumb {
-	background-color: tokens.$scrollbar-track-color;
-	border-radius: tokens.$scrollbar-border-radius;
-	background-image: tokens.$scrollbar-thumb-background-image;
+	*::-webkit-scrollbar-thumb {
+		background-color: tokens.$scrollbar-track-color;
+		border-radius: tokens.$scrollbar-border-radius;
+		background-image: tokens.$scrollbar-thumb-background-image;
+	}
 }

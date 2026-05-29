@@ -1,18 +1,20 @@
 @use "../abstracts/tokens";
 @use "../abstracts/mixins";
 
-.site-footer {
-	background-color: tokens.$site-footer-background-color;
-	color: tokens.$site-footer-color;
+@layer components {
+	.site-footer {
+		background-color: tokens.$site-footer-background-color;
+		color: tokens.$site-footer-color;
 
-	a {
-		font-family: tokens.$site-footer-anchor-font-family;
-		letter-spacing: tokens.$site-footer-anchor-letter-spacing;
-		@include mixins.anchor(
-			$text-decoration: tokens.$site-footer-anchor-text-decoration,
-			$color: tokens.$site-footer-anchor-color,
-			$visited-color: tokens.$site-footer-anchor-visited-color,
-			$hover-color: tokens.$site-footer-anchor-hover-color
-		);
+		a {
+			font-family: tokens.$site-footer-anchor-font-family;
+			letter-spacing: tokens.$site-footer-anchor-letter-spacing;
+			@include mixins.anchor(
+				$text-decoration: tokens.$site-footer-anchor-text-decoration,
+				$color: tokens.$site-footer-anchor-color,
+				$visited-color: tokens.$site-footer-anchor-visited-color,
+				$hover-color: tokens.$site-footer-anchor-hover-color
+			);
+		}
 	}
 }

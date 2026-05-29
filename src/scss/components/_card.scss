@@ -1,32 +1,34 @@
 @use "../abstracts/tokens";
 @use "../abstracts/mixins";
 
-.card {
-	display: flex;
-	flex-direction: column;
-	gap: tokens.$card-space;
-	background-color: tokens.$card-background-color;
-	border: tokens.$card-border;
-	border-radius: tokens.$card-border-radius;
-	line-height: tokens.$card-line-height;
+@layer components {
+	.card {
+		display: flex;
+		flex-direction: column;
+		gap: tokens.$card-space;
+		background-color: tokens.$card-background-color;
+		border: tokens.$card-border;
+		border-radius: tokens.$card-border-radius;
+		line-height: tokens.$card-line-height;
 
-	& > *:not(&__image) {
-		padding-inline: tokens.$card-padding;
+		& > *:not(&__image) {
+			padding-inline: tokens.$card-padding;
 
-		&:first-child {
-			padding-top: tokens.$card-padding;
+			&:first-child {
+				padding-top: tokens.$card-padding;
+			}
+
+			&:last-child {
+				padding-bottom: tokens.$card-padding;
+			}
 		}
 
-		&:last-child {
-			padding-bottom: tokens.$card-padding;
+		&__image {
+			border-radius: tokens.$card-border-radius tokens.$card-border-radius 0 0;
 		}
-	}
 
-	&__image {
-		border-radius: tokens.$card-border-radius tokens.$card-border-radius 0 0;
-	}
-
-	&__heading {
-		@include mixins.heading(tokens.$card-heading-size);
+		&__heading {
+			@include mixins.heading(tokens.$card-heading-size);
+		}
 	}
 }

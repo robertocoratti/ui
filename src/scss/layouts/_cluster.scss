@@ -4,19 +4,21 @@
 @use "../abstracts/tokens";
 @use "../abstracts/functions" as *;
 
-.cluster {
-	display: flex;
-	flex-wrap: wrap;
+@layer layouts {
+	.cluster {
+		display: flex;
+		flex-wrap: wrap;
 
-	@each $key in map.keys(variables.$spaces) {
-		$selector: '&[data-space="#{$key}"]';
+		@each $key in map.keys(variables.$spaces) {
+			$selector: '&[data-space="#{$key}"]';
 
-		@if (tokens.$space == space($key)) {
-			$selector: "&, #{$selector}";
-		}
+			@if (tokens.$space == space($key)) {
+				$selector: "&, #{$selector}";
+			}
 
-		#{$selector} {
-			gap: space("#{$key}");
+			#{$selector} {
+				gap: space("#{$key}");
+			}
 		}
 	}
 }

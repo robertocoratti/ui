@@ -1,67 +1,94 @@
+@use "sass:map";
+@use "sass:list";
+
 @use "../abstracts/variables";
 @use "../abstracts/tokens";
+@use "../abstracts/functions" as *;
 
-:root {
-	color-scheme: tokens.$color-scheme;
+@layer reset, base, tokens, layouts, components, utilities;
 
-	// default
-	--size: #{tokens.$size};
-	--space: #{tokens.$space};
-
-	// breakpoints
-	@each $key, $value in variables.$breakpoints {
-		--breakpoint-#{$key}: #{$value};
+@mixin _theme-vars($name) {
+	$theme: map.get(variables.$color-themes, $name);
+	@each $prop, $color-key in $theme {
+		--theme-#{$prop}: #{color(list.nth($color-key, 1), list.nth($color-key, 2))};
 	}
+	color-scheme: #{$name};
+}
 
-	// colors
-	@each $key, $shades in variables.$colors {
-		@each $shade, $value in $shades {
-			--color-#{$key}-#{$shade}: #{$value};
+@layer tokens {
+	:root {
+		// default
+		--size: #{tokens.$size};
+		--space: #{tokens.$space};
+
+		// breakpoints
+		@each $key, $value in variables.$breakpoints {
+			--breakpoint-#{$key}: #{$value};
 		}
+
+		// colors
+		@each $key, $shades in variables.$colors {
+			@each $shade, $value in $shades {
+				--color-#{$key}-#{$shade}: #{$value};
+			}
+		}
+
+		// sizes
+		@each $key, $value in variables.$sizes {
+			--size-#{$key}: #{$value};
+		}
+
+		// spaces
+		@each $key, $value in variables.$spaces {
+			--space-#{$key}: #{$value};
+		}
+
+		// radiuses
+		@each $key, $value in variables.$radiuses {
+			--radius-#{$key}: #{$value};
+		}
+
+		// font sizes
+		@each $key, $value in variables.$font-sizes {
+			--font-size-#{$key}: #{$value};
+		}
+
+		// font weights
+		@each $key, $value in variables.$font-weights {
+			--font-weight-#{$key}: #{$value};
+		}
+
+		// font families
+		@each $key, $value in variables.$font-families {
+			--font-family-#{$key}: #{$value};
+		}
+
+		// border
+		@each $key, $value in variables.$border-widths {
+			--border-#{$key}: #{$value};
+		}
+
+		// shadows
+		@each $key, $value in variables.$shadows {
+			--shadow-#{$key}: #{$value};
+		}
+
+		// aspect ratios
+		@each $key, $value in variables.$aspect-ratios {
+			--aspect-ratio-#{$key}: #{$value};
+		}
+
+		// light theme (default)
+		@include _theme-vars("light");
 	}
 
-	// sizes
-	@each $key, $value in variables.$sizes {
-		--size-#{$key}: #{$value};
+	:root[data-theme="dark"] {
+		@include _theme-vars("dark");
 	}
 
-	// spaces
-	@each $key, $value in variables.$spaces {
-		--space-#{$key}: #{$value};
-	}
-
-	// radiuses
-	@each $key, $value in variables.$radiuses {
-		--radius-#{$key}: #{$value};
-	}
-
-	// font sizes
-	@each $key, $value in variables.$font-sizes {
-		--font-size-#{$key}: #{$value};
-	}
-
-	// font weights
-	@each $key, $value in variables.$font-weights {
-		--font-weight-#{$key}: #{$value};
-	}
-
-	// font families
-	@each $key, $value in variables.$font-families {
-		--font-family-#{$key}: #{$value};
-	}
-
-	// border
-	@each $key, $value in variables.$border-widths {
-		--border-#{$key}: #{$value};
-	}
-
-	// shadows
-	@each $key, $value in variables.$shadows {
-		--shadow-#{$key}: #{$value};
-	}
-
-	// aspect ratios
-	@each $key, $value in variables.$aspect-ratios {
-		--aspect-ratio-#{$key}: #{$value};
+	@media (prefers-color-scheme: dark) {
+		:root:not([data-theme]) {
+			@include _theme-vars("dark");
+		}
 	}
 }
