@@ -5,49 +5,11 @@
 	rel="stylesheet"
 />
 <style>
-	:root {
-		--sb-bg: hsl(224, 9%, 13%);
-		--sb-surface: hsl(224, 9%, 22%);
-		--sb-fg: hsl(224, 9%, 97%);
-		--sb-fg-subtle: hsl(224, 9%, 62%);
-		--sb-border: hsl(224, 9%, 32%);
-		--sb-primary: hsl(217, 82%, 50%);
-		--sb-secondary: hsl(207, 75%, 56%);
-		--sb-muted: hsl(217, 82%, 73%);
-		--sb-bar: hsl(224, 9%, 8%);
-	}
-
-	:root[data-theme="light"] {
-		--sb-bg: hsl(224, 9%, 97%);
-		--sb-surface: hsl(224, 9%, 92%);
-		--sb-fg: hsl(224, 9%, 8%);
-		--sb-fg-subtle: hsl(224, 9%, 46%);
-		--sb-border: hsl(224, 9%, 80%);
-		--sb-primary: hsl(217, 82%, 50%);
-		--sb-secondary: hsl(207, 75%, 56%);
-		--sb-muted: hsl(217, 82%, 36%);
-		--sb-bar: hsl(224, 9%, 92%);
-	}
-
-	@media (prefers-color-scheme: light) {
-		:root:not([data-theme]) {
-			--sb-bg: hsl(224, 9%, 97%);
-			--sb-surface: hsl(224, 9%, 92%);
-			--sb-fg: hsl(224, 9%, 8%);
-			--sb-fg-subtle: hsl(224, 9%, 46%);
-			--sb-border: hsl(224, 9%, 80%);
-			--sb-primary: hsl(217, 82%, 50%);
-			--sb-secondary: hsl(207, 75%, 56%);
-			--sb-muted: hsl(217, 82%, 36%);
-			--sb-bar: hsl(224, 9%, 92%);
-		}
-	}
-
 	.sidebar-item[data-selected="true"] {
-		color: var(--sb-bg) !important;
+		color: hsl(224, 9%, 13%) !important;
 	}
 
 	.sidebar-item[data-selected="true"] svg {
-		color: var(--sb-bg) !important;
+		color: hsl(224, 9%, 13%) !important;
 	}
 </style>

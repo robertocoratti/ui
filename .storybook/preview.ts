@@ -2,7 +2,7 @@ import type { Preview, Decorator } from "@storybook/react"
 import { renderToStaticMarkup } from "react-dom/server"
 import xmlFormat from "xml-formatter"
 
-import theme from "./theme"
+import { darkTheme } from "./theme"
 import "./style.scss"
 
 const withTheme: Decorator = (Story, context) => {
@@ -37,7 +37,7 @@ const preview: Preview = {
 		backgrounds: { disable: true },
 		actions: { argTypesRegex: "^on[A-Z].*" },
 		docs: {
-			theme,
+			theme: darkTheme,
 			toc: true,
 			source: {
 				transform: (source: any, storyContext: any) => {
