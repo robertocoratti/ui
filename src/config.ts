@@ -35,7 +35,7 @@ export const sizes = [
 export const spaces = ["none", "xs", "sm", "md", "lg", "xl"] as const
 
 // fonts
-export const fonts = ["sans", "serif", "mono"] as const
+export const fonts = ["sans", "display", "mono"] as const
 export const fontSizes = [
 	"100",
 	"200",

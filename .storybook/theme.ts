@@ -2,43 +2,32 @@ import { create } from "@storybook/theming/create"
 
 export default create({
 	base: "dark",
-	// Typography
-	fontBase: "'DM Sans', sans-serif",
-	fontCode: "'IBM Plex Mono', monospace",
+	fontBase: "'Inter', sans-serif",
+	fontCode: "'JetBrains Mono', monospace",
 
-	/* 	brandTitle: "My custom Storybook",
-	brandUrl: "https://example.com",
-	brandImage: "https://storybook.js.org/images/placeholders/350x150.png",
-	brandTarget: "_blank", */
+	colorPrimary: "hsl(220, 90%, 52%)",
+	colorSecondary: "hsl(174, 60%, 52%)",
 
-	//
-	colorPrimary: "hsl(245, 37%, 68%)",
-	colorSecondary: "hsl(79, 58%, 81%)",
-
-	// UI
-	appBg: "hsl(206, 14%, 22%)",
-	appContentBg: "hsl(206, 14%, 22%)",
-	appBorderColor: "hsl(245, 37%, 68%, 0.3)",
+	appBg: "hsl(222, 16%, 14%)",
+	appContentBg: "hsl(222, 16%, 14%)",
+	appBorderColor: "hsl(222, 16%, 32%)",
 	appBorderRadius: 8,
 
-	// Text colors
-	textColor: "hsl(245, 37%, 68%)",
-	textInverseColor: "hsl(79, 58%, 81%)",
-	textMutedColor: "hsl(31, 100%, 87%)",
+	textColor: "hsl(222, 16%, 88%)",
+	textInverseColor: "hsl(222, 16%, 14%)",
+	textMutedColor: "hsl(42, 96%, 87%)",
 
-	// Toolbar default and active colors
-	barTextColor: "hsl(31, 100%, 87%)",
-	barHoverColor: "hsl(245, 37%, 68%)",
-	barSelectedColor: "hsl(79, 58%, 81%)",
-	barBg: "hsl(206, 14%, 22%)",
+	barTextColor: "hsl(222, 16%, 88%)",
+	barHoverColor: "hsl(220, 90%, 62%)",
+	barSelectedColor: "hsl(174, 60%, 52%)",
+	barBg: "hsl(222, 16%, 9%)",
 
-	// Form colors
-	buttonBg: "hsl(206, 14%, 22%)",
-	buttonBorder: "hsl(31, 100%, 87%, 0.3)",
-	booleanBg: "hsl(206, 14%, 22%)",
-	booleanSelectedBg: "hsl(206, 14%, 32%)",
-	inputBg: "hsl(206, 14%, 22%)",
-	inputBorder: "hsl(31, 100%, 87%, 0.25)",
-	inputTextColor: "hsl(31, 100%, 87%)",
+	buttonBg: "hsl(222, 16%, 14%)",
+	buttonBorder: "hsl(222, 16%, 32%)",
+	booleanBg: "hsl(222, 16%, 14%)",
+	booleanSelectedBg: "hsl(222, 16%, 22%)",
+	inputBg: "hsl(222, 16%, 22%)",
+	inputBorder: "hsl(222, 16%, 32%)",
+	inputTextColor: "hsl(222, 16%, 88%)",
 	inputBorderRadius: 8,
 })

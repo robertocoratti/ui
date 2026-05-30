@@ -1,5 +1,4 @@
 @use "sass:color";
-@use "sass:list";
 
 @use "../abstracts/tokens";
 
@@ -41,7 +40,7 @@
 		transition: box-shadow 150ms ease-in-out;
 
 		&:is(:focus, :focus-visible) {
-			box-shadow: 0 0 8px 4px #{color.change(list.nth(tokens.$form-input-border, 3), $alpha: 0.25)};
+			box-shadow: 0 0 8px 4px #{color.change(tokens.$form-input-focus-color, $alpha: 0.25)};
 		}
 	}
 
@@ -58,7 +57,7 @@
 			background-size: contain;
 
 			&:is(:focus, :focus-visible) {
-				box-shadow: 0 0 8px 4px #{color.change(tokens.$form-checkbox-background-color, $alpha: 0.25)};
+				box-shadow: 0 0 8px 4px #{color.change(tokens.$form-checkbox-focus-color, $alpha: 0.25)};
 			}
 
 			&:checked {
@@ -79,7 +78,7 @@
 			background-size: contain;
 
 			&:is(:focus, :focus-visible) {
-				box-shadow: 0 0 8px 4px #{color.change(tokens.$form-radio-background-color, $alpha: 0.25)};
+				box-shadow: 0 0 8px 4px #{color.change(tokens.$form-radio-focus-color, $alpha: 0.25)};
 			}
 
 			&:checked {
@@ -111,7 +110,7 @@
 		transition: box-shadow 150ms ease-in-out;
 
 		&:focus-visible {
-			box-shadow: 0 0 8px 4px #{color.change(list.nth(tokens.$form-select-border, 3), $alpha: 0.25)};
+			box-shadow: 0 0 8px 4px #{color.change(tokens.$form-input-focus-color, $alpha: 0.25)};
 		}
 
 		& option {
