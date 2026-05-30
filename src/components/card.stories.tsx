@@ -9,7 +9,7 @@ const render = ({ image, ...args }: CardArgs) => (
 		{image && (
 			<img
 				className="card__image"
-				src="https://source.unsplash.com/random/800x400?sig=1"
+				src="https://picsum.photos/seed/1/800/400"
 			/>
 		)}
 		<div className="card__heading">Heading</div>

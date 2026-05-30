@@ -11,7 +11,7 @@ const render = ({ ...args }: FrameArgs) => (
 		className="radius-1 shadow-1"
 		style={{ width: "50%", margin: "0 auto" }}
 	>
-		<img src="https://source.unsplash.com/random/840x360" loading="lazy" />
+		<img src="https://picsum.photos/840/360" loading="lazy" />
 	</Frame>
 )
 

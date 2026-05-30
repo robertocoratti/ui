@@ -14,7 +14,7 @@ const render = ({ imagesCount = 8, ...args }: ReelArgs) => (
 				key={num}
 				className="radius-1 shadow-1"
 				alt={`Random image #${num + 1}`}
-				src={`https://source.unsplash.com/random/200x150?sig=${num}`}
+				src={`https://picsum.photos/seed/${num}/200/150`}
 				loading="lazy"
 			/>
 		))}

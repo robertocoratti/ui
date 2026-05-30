@@ -15,7 +15,7 @@ const render = ({ childrenCount = 3, images, ...args }: GridArgs) => (
 				<img
 					key={num}
 					className="radius-1 shadow-1"
-					src={`https://source.unsplash.com/random/200x150?sig=${num}`}
+					src={`https://picsum.photos/seed/${num}/200/150`}
 				/>
 			) : (
 				<div key={num} className="bg-accent-200 text-base-800 py-xs px-sm">
