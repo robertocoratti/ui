@@ -7,6 +7,7 @@ const config: StorybookConfig = {
 			name: "@storybook/addon-essentials",
 			options: {
 				actions: false,
+				backgrounds: false,
 			},
 		},
 		"@storybook/addon-links",

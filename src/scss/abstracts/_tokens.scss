@@ -63,20 +63,20 @@ $button-transition-easing: ease-in-out !default;
 $button-transition-duration: 75ms !default;
 $button-variants: (
 	"primary": (
-		"background-color": hsl(220, 90%, 52%),
-		"color": hsl(222, 16%, 96%),
+		"background-color": hsl(250, 80%, 52%),
+		"color": hsl(224, 9%, 97%),
 	),
 	"secondary": (
-		"background-color": hsl(174, 60%, 52%),
-		"color": hsl(222, 16%, 14%),
+		"background-color": hsl(207, 75%, 56%),
+		"color": hsl(224, 9%, 8%),
 	),
 	"accent": (
-		"background-color": hsl(42, 96%, 50%),
-		"color": hsl(222, 16%, 14%),
+		"background-color": hsl(152, 55%, 50%),
+		"color": hsl(224, 9%, 8%),
 	),
 	"ghost": (
 		"background-color": rgba(0, 0, 0, 0),
-		"color": hsl(220, 90%, 62%),
+		"color": hsl(250, 80%, 62%),
 		"font-weight": font-weight("regular"),
 	),
 ) !default;
@@ -113,8 +113,8 @@ $form-label-font-weight: font-weight("medium") !default;
 $form-label-font-size: font-size("500") !default;
 
 // form input
-$form-input-padding: space("xs") !default;
-$form-input-border-radius: radius("2") !default;
+$form-input-padding: size("2") size("3") !default;
+$form-input-border-radius: radius("1") !default;
 $form-input-border: 1px solid color("base", "500", false) !default;
 $form-input-focus-color: color("primary", "500", false) !default;
 $form-input-color: var(--theme-fg) !default;
@@ -123,8 +123,8 @@ $form-input-font-size: font-size("300") !default;
 $form-input-font-weight: font-weight("regular") !default;
 
 // form checkbox
-$form-checkbox-padding: space("xs") !default;
-$form-checkbox-size: size("4") !default;
+$form-checkbox-padding: 0 !default;
+$form-checkbox-size: size("5") !default;
 $form-checkbox-mark-color: color("base", "100", false) !default;
 $form-checkbox-background-color: color("primary", "500", false) !default;
 $form-checkbox-border: 1px solid color("base", "500", false) !default;
@@ -133,8 +133,8 @@ $form-checkbox-border-radius: radius("1") !default;
 $form-checkbox-background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='#{$form-checkbox-mark-color}' stroke-width='3' d='M18.71 7.21a1 1 0 0 0-1.42 0l-7.45 7.46l-3.13-3.14A1 1 0 1 0 5.29 13l3.84 3.84a1 1 0 0 0 1.42 0l8.16-8.16a1 1 0 0 0 0-1.47Z'/%3e%3c/svg%3e") !default;
 
 // form radio
-$form-radio-padding: size("2") !default;
-$form-radio-size: size("2") !default;
+$form-radio-padding: 0 !default;
+$form-radio-size: size("5") !default;
 $form-radio-mark-color: color("base", "100", false) !default;
 $form-radio-background-color: color("primary", "500", false) !default;
 $form-radio-border: 1px solid color("base", "500", false) !default;
@@ -144,7 +144,7 @@ $form-radio-background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w
 
 // form select
 $form-select-padding: $form-input-padding !default;
-$form-select-space-caret: space("lg") !default;
+$form-select-space-caret: size("9") !default;
 $form-select-border-radius: $form-input-border-radius !default;
 $form-select-border: $form-input-border !default;
 $form-select-color: $form-input-color !default;

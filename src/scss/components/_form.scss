@@ -21,15 +21,18 @@
 	}
 
 	label {
+		display: block;
 		color: tokens.$form-label-color;
 		font-family: tokens.$form-label-font-family;
 		font-weight: tokens.$form-label-font-weight;
 		font-size: tokens.$form-label-font-size;
+		letter-spacing: 0.01em;
 	}
 
-	input:not(.button),
+	input:not(.button, [type="checkbox"], [type="radio"], [type="color"], [type="range"]),
 	textarea {
 		display: block;
+		inline-size: 100%;
 		padding: tokens.$form-input-padding;
 		border-radius: tokens.$form-input-border-radius;
 		border: tokens.$form-input-border;
@@ -37,100 +40,134 @@
 		background-color: tokens.$form-input-background-color;
 		font-size: tokens.$form-input-font-size;
 		font-weight: tokens.$form-input-font-weight;
-		transition: box-shadow 150ms ease-in-out;
+		font-family: inherit;
+		line-height: 1.5;
+		transition:
+			border-color 120ms ease,
+			box-shadow 120ms ease;
 
 		&:is(:focus, :focus-visible) {
-			box-shadow: 0 0 8px 4px #{color.change(tokens.$form-input-focus-color, $alpha: 0.25)};
+			outline: none;
+			border-color: tokens.$form-input-focus-color;
+			box-shadow: 0 0 0 3px #{color.change(tokens.$form-input-focus-color, $alpha: 0.14)};
 		}
 	}
 
-	input:not(.button) {
-		[type="checkbox"] {
-			appearance: none;
-			padding: tokens.$form-checkbox-padding;
-			height: tokens.$form-checkbox-size;
-			width: tokens.$form-checkbox-size;
-			border: tokens.$form-checkbox-border;
-			border-radius: tokens.$form-checkbox-border-radius;
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: contain;
+	input[type="checkbox"]:not(.button) {
+		appearance: none;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		inline-size: tokens.$form-checkbox-size;
+		block-size: tokens.$form-checkbox-size;
+		padding: 0;
+		border: tokens.$form-checkbox-border;
+		border-radius: tokens.$form-checkbox-border-radius;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 80%;
+		vertical-align: middle;
+		transition:
+			border-color 120ms ease,
+			background-color 120ms ease,
+			box-shadow 120ms ease;
 
-			&:is(:focus, :focus-visible) {
-				box-shadow: 0 0 8px 4px #{color.change(tokens.$form-checkbox-focus-color, $alpha: 0.25)};
-			}
-
-			&:checked {
-				background-color: tokens.$form-checkbox-background-color;
-				background-image: tokens.$form-checkbox-background-image;
-			}
+		&:is(:focus, :focus-visible) {
+			outline: none;
+			border-color: tokens.$form-checkbox-focus-color;
+			box-shadow: 0 0 0 3px #{color.change(tokens.$form-checkbox-focus-color, $alpha: 0.14)};
 		}
 
-		[type="radio"] {
-			appearance: none;
-			padding: tokens.$form-radio-padding;
-			height: tokens.$form-radio-size;
-			width: tokens.$form-radio-size;
-			border: tokens.$form-radio-border;
-			border-radius: tokens.$form-radio-border-radius;
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: contain;
+		&:checked {
+			background-color: tokens.$form-checkbox-background-color;
+			border-color: tokens.$form-checkbox-background-color;
+			background-image: tokens.$form-checkbox-background-image;
+		}
+	}
 
-			&:is(:focus, :focus-visible) {
-				box-shadow: 0 0 8px 4px #{color.change(tokens.$form-radio-focus-color, $alpha: 0.25)};
-			}
+	input[type="radio"]:not(.button) {
+		appearance: none;
+		display: inline-block;
+		inline-size: tokens.$form-radio-size;
+		block-size: tokens.$form-radio-size;
+		padding: 0;
+		border: tokens.$form-radio-border;
+		border-radius: tokens.$form-radio-border-radius;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 55%;
+		vertical-align: middle;
+		transition:
+			border-color 120ms ease,
+			background-color 120ms ease,
+			box-shadow 120ms ease;
 
-			&:checked {
-				background-color: tokens.$form-radio-background-color;
-				background-image: tokens.$form-radio-background-image;
-			}
+		&:is(:focus, :focus-visible) {
+			outline: none;
+			border-color: tokens.$form-radio-focus-color;
+			box-shadow: 0 0 0 3px #{color.change(tokens.$form-radio-focus-color, $alpha: 0.14)};
 		}
 
-		[type="color"] {
-			padding: 0;
+		&:checked {
+			background-color: tokens.$form-radio-background-color;
+			border-color: tokens.$form-radio-background-color;
+			background-image: tokens.$form-radio-background-image;
 		}
+	}
+
+	input[type="color"]:not(.button) {
+		padding: 0;
+		block-size: 2.5rem;
+		inline-size: 3rem;
+		cursor: pointer;
 	}
 
 	select {
 		display: block;
+		inline-size: 100%;
 		appearance: none;
 		padding: tokens.$form-select-padding;
-		padding-right: tokens.$form-select-space-caret;
+		padding-inline-end: tokens.$form-select-space-caret;
 		border-radius: tokens.$form-select-border-radius;
 		border: tokens.$form-select-border;
 		color: tokens.$form-select-color;
 		background-color: tokens.$form-select-background-color;
 		font-size: tokens.$form-select-font-size;
 		font-weight: tokens.$form-select-font-weight;
-		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23dee2e6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+		font-family: inherit;
+		line-height: 1.5;
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 		background-repeat: no-repeat;
 		background-position: right 0.75rem center;
-		background-size: 16px 12px;
-		transition: box-shadow 150ms ease-in-out;
+		background-size: 14px 10px;
+		transition:
+			border-color 120ms ease,
+			box-shadow 120ms ease;
 
 		&:focus-visible {
-			box-shadow: 0 0 8px 4px #{color.change(tokens.$form-input-focus-color, $alpha: 0.25)};
+			outline: none;
+			border-color: tokens.$form-input-focus-color;
+			box-shadow: 0 0 0 3px #{color.change(tokens.$form-input-focus-color, $alpha: 0.14)};
 		}
 
 		& option {
 			display: block;
 			padding: tokens.$form-select-option-padding;
 			font-size: tokens.$form-select-option-font-size;
-			font-weight: tokens.$form-select-option-font-weight;
-			white-space-collapse: collapse;
-			text-wrap: nowrap;
+			white-space: nowrap;
 			cursor: pointer;
 
 			&:disabled {
 				color: tokens.$form-placeholder-color;
-				font-family: tokens.$form-placeholder-font-family;
 			}
 		}
 	}
 
 	::placeholder {
 		color: tokens.$form-placeholder-color;
-		font-family: tokens.$form-placeholder-font-family;
+		font-family: inherit;
+		opacity: 1;
 	}
 }
