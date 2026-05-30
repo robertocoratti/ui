@@ -16,7 +16,8 @@
 }
 
 @layer tokens {
-	:root {
+	:root,
+	:root[data-theme="light"] {
 		// default
 		--size: #{tokens.$size};
 		--space: #{tokens.$space};
